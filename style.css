@@ -54,6 +54,13 @@ header {
     filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.288));
 }
 
+.spotify-container {
+    max-width: 600px; /* Impede que o player fique gigante no PC */
+    margin: 20px auto; /* Centraliza a caixa na tela */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra para destacar */
+    border-radius: 12px;
+}
+
 /* Navegação */
 nav {
     background: #fff;
