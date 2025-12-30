@@ -1,0 +1,195 @@
+:root {
+    --verde-principal: #0B8C43; /* Verde extraído do seu arquivo */
+    --rosa-destaque: #BF0A8F;   /* Rosa extraído do seu arquivo */
+    --branco-gelo: #f4f4f4;
+    --texto-escuro: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--texto-escuro);
+    background-color: var(--branco-gelo);
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--verde-principal) 0%, var(--rosa-destaque) 100%);
+    color: white;
+    padding: 2rem 0;
+    border-bottom: 5px solid var(--rosa-destaque);
+    text-align: center;
+}
+
+.logo-area h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo-area span { 
+    color: var(--rosa-destaque); 
+    /* Eixo X | Eixo Y | Tamanho do Borrão (Fade) | Cor */
+    text-shadow: 0px 0px 10px #5e234e83; 
+    padding: 0 5px; 
+    border-radius: 4px; 
+}
+.logo-area p { margin: 5px 0 0; font-size: 0.9rem; letter-spacing: 1px; }
+.logo-area img.logo-img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.288));
+}
+
+/* Navegação */
+nav {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    margin: 5px 15px;
+    text-decoration: none;
+    color: var(--verde-principal);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav a:hover, nav a:active {
+    color: var(--rosa-destaque);
+    border-bottom: 2px solid var(--rosa-destaque);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--verde-principal);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    /* Adicione background-image aqui se tiver foto */
+}
+
+.btn-contato {
+    background-color: var(--rosa-destaque);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+/* Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.foto-card img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--verde-principal);
+    transition: transform 0.3s;
+}
+.foto-card img:hover { transform: scale(1.05); }
+
+/* Formulário de Inscrição */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--rosa-destaque);
+}
+
+.linha-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.linha-form > div { width: 100%; }
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--verde-principal);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.termo-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.btn-whatsapp-grande {
+    width: 100%;
+    background-color: #25d366;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-whatsapp-grande:hover { background-color: #1ebc57; }
+
+/* Animação das Abas */
+.aba-conteudo {
+    animation: fadeIn 0.6s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-secao {
+    color: var(--verde-principal);
+    text-align: center;
+    border-bottom: 2px solid var(--rosa-destaque);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+}

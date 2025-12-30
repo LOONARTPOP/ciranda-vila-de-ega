@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciranda Vila de Ega | Grêmio Recreativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="logo-area">
+        <img src="images/logo-500px.png" alt="Logo Ciranda Vila de Ega" class="logo-img">
+        <h1>CIRANDA <span>VILA DE EGA</span></h1>
+        <p>Grêmio Recreativo, Folclórico e Cultural.</p>
+    </div>
+</header>
+
+    <nav>
+        <a href="#" onclick="mostrarAba('inicio')">Início</a>
+        <a href="#" onclick="mostrarAba('fotos')">Galeria</a>
+        <a href="#" onclick="mostrarAba('inscricao')">Inscrições</a>
+        <a href="#" onclick="mostrarAba('transparencia')">Transparência</a>
+        <a href="#" onclick="mostrarAba('contato')">Contato</a>
+    </nav>
+
+    <main class="container">
+        
+        <div id="aba-inicio" class="aba-conteudo">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Vila de Ega: Um poema escrito em passos de dança</h2>
+                    <p>Venha dançar e celebrar a cultura de Tefé conosco.</p>
+                    <button onclick="mostrarAba('inscricao')" class="btn-contato">Seja um Membro</button>
+                </div>
+            </section>
+            
+        <section id="historia" style="text-align: center; margin-top: 40px;">
+            <h2 style="color: var(--verde-principal);">Sobre o Grêmio Recreativo</h2>
+            <p>O <strong>Grêmio Recreativo Folclórico e Cultural Vila de Ega</strong> dedica-se à preservação das raízes culturais através da dança da Ciranda, mantendo viva a chama da tradição em nosso município.</p>
+        </section>
+        </div>
+
+        <div id="aba-fotos" class="aba-conteudo" style="display:none;">
+            <h2 class="titulo-secao">Galeria Vila de Ega</h2>
+            <p style="text-align: center;">Nossos momentos e apresentações</p>
+            
+            <div class="galeria-grid">
+                <div class="foto-card"><img src="https://via.placeholder.com/400x300/10733B/FFFFFF?text=Apresentacao+2024" alt="Apresentação"></div>
+                <div class="foto-card"><img src="https://via.placeholder.com/400x300/BF068E/FFFFFF?text=Ensaio+Geral" alt="Ensaio"></div>
+                <div class="foto-card"><img src="https://via.placeholder.com/400x300/10733B/FFFFFF?text=Festival+Folclorico" alt="Festival"></div>
+                <div class="foto-card"><img src="https://via.placeholder.com/400x300/BF068E/FFFFFF?text=Vila+de+Ega" alt="Grupo"></div>
+            </div>
+        </div>
+
+        <div id="aba-inscricao" class="aba-conteudo" style="display:none;">
+            <div class="form-card">
+                <h2 class="titulo-secao">Ficha de Inscrição</h2>
+                <p style="text-align: center; margin-bottom: 20px;">Preencha os dados abaixo para se tornar um brincante.</p>
+
+                <form id="form-inscricao">
+                    <label>Nome do brincante:</label>
+                    <input type="text" id="nome" placeholder="Nome completo" required>
+
+                    <label>Responsável (se menor):</label>
+                    <input type="text" id="responsavel" placeholder="Nome do responsável">
+
+                    <div class="linha-form">
+                        <div>
+                            <label>Data de Nasc.:</label>
+                            <input type="date" id="nascimento">
+                        </div>
+                        <div>
+                            <label>Idade:</label>
+                            <input type="number" id="idade" style="width: 80px;">
+                        </div>
+                        <div>
+                            <label>Altura:</label>
+                            <input type="text" id="altura" placeholder="Ex: 1.70">
+                        </div>
+                    </div>
+
+                    <div class="linha-form">
+                        <div>
+                            <label>Peso:</label>
+                            <input type="text" id="peso">
+                        </div>
+                        <div>
+                            <label>Nº Calçado:</label>
+                            <input type="number" id="calcado">
+                        </div>
+                        <div>
+                            <label>Tam. Blusa:</label>
+                            <input type="text" id="blusa" placeholder="P, M, G...">
+                        </div>
+                    </div>
+
+                    <label>Endereço:</label>
+                    <input type="text" id="endereco" placeholder="Rua, número, complemento">
+
+                    <div class="linha-form">
+                        <div style="flex: 2;">
+                            <label>Bairro:</label>
+                            <input type="text" id="bairro">
+                        </div>
+                        <div style="flex: 1;">
+                            <label>Telefone/Zap:</label>
+                            <input type="tel" id="telefone" placeholder="(92) 9..." required>
+                        </div>
+                    </div>
+
+                    <label>Email:</label>
+                    <input type="email" id="email" placeholder="email@exemplo.com">
+
+                    <label>Já participou de oficina de dança?</label>
+                    <select id="oficina">
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
+                    </select>
+
+                    <label>Se sim, qual?</label>
+                    <input type="text" id="qual_oficina">
+
+                    <div class="termo-box">
+                        <h3>INSCRIÇÃO E TERMO</h3>
+                        <p>Eu, responsável ou próprio brincante identificado acima, concordo com as disposições gerais e solicito a inscrição na Ciranda Vila de Ega.</p>
+                        <p style="margin-top: 10px; font-weight: bold; color: var(--verde-principal);">
+                            Tefé/AM - <span id="data-hoje"></span>
+                        </p>
+                    </div>
+
+                    <button type="button" onclick="enviarInscricaoWhatsApp()" class="btn-whatsapp-grande">
+                        Confirmar e Enviar Inscrição 
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="aba-transparencia" class="aba-conteudo" style="display:none;">
+            <h2 class="titulo-secao">Transparência</h2>
+            <div class="info-card">
+                <h3>Informações Oficiais</h3>
+                <p><strong>Razão Social:</strong> Grêmio Recreativo Folclórico e Cultural Vila de Ega</p>
+                <p><strong>CNPJ:</strong> 50.194.186/0001-35</p>
+                <p><strong>Natureza:</strong> Associação Privada</p>
+                <p><strong>Situação:</strong> Ativa</p>
+            </div>
+        </div>
+
+    <div id="aba-contato" class="aba-conteudo" style="display:none;">
+        <h2 class="titulo-secao">Fale Conosco</h2>
+        <div style="text-align: center;">
+            <p><strong>Email:</strong> cviladeega@gmail.com</p>
+            <p><strong>Telefone:</strong> (92) 98469-3418</p>
+            <p><strong>Endereço da Sede:</strong> Rua Japurá, 112, Bairro São Francisco, Tefé - AM</p>
+            
+            <br>
+            
+            <h3 style="color: var(--verde-principal); margin-bottom: 15px;">Nossa Localização</h3>
+            
+            <div class="mapa-responsivo">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d296.9103056898261!2d-64.71476314604796!3d-3.348563723852606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1767064950621!5m2!1spt-BR!2sbr" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Sede: Vila de Ega - Tefé/AM</p>
+        </div>
+    </div>
+
+    </main>
+
+    <footer style="background: var(--verde-principal); color: white; padding: 20px; text-align: center; margin-top: 50px;">
+        <p>&copy; 2025 Ciranda Vila de Ega - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
