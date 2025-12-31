@@ -24,126 +24,175 @@
         <a href="#" onclick="mostrarAba('contato')">Contato</a>
     </nav>
 
-    <main class="container">
+<main class="container">
         
         <div id="aba-inicio" class="aba-conteudo">
-            <section class="hero">
+            <section class="hero-interativo" id="hero-mouse">
+                <div class="fundo-movimento"></div>
+                <div class="mascara-verde"></div>
                 <div class="hero-content">
                     <h2>Vila de Ega: Um poema escrito em passos de dança</h2>
                     <p>Venha dançar e celebrar a cultura de Tefé conosco.</p>
-                    <button onclick="mostrarAba('inscricao')" class="btn-contato">Seja um Membro</button>
+                    <button onclick="mostrarAba('inscricao')" class="btn-membro">Seja um Membro</button>
                 </div>
             </section>
             
-        <section id="historia" style="text-align: center; margin-top: 40px;">
-            <h2 style="color: var(--verde-principal);">Sobre o Grêmio Recreativo</h2>
-            <p>O <strong>Grêmio Recreativo Folclórico e Cultural Vila de Ega</strong> dedica-se à preservação das raízes culturais através da dança da Ciranda, mantendo viva a chama da tradição em nosso município.</p>
-        </section>
+            <section id="historia" style="text-align: justify; margin-top: 40px;">
+                <h2 style="color: var(--verde-principal); text-align: center;">Nossa História e Propósito</h2>
+                <p>A Ciranda Vila de Ega surgiu em 2019 inserida em uma nova política cultural de valorização das manifestações populares no Amazonas. Desde o início, nossa missão foi clara: resgatar a tradição da ciranda e promover a arte como ferramenta de transformação social. </p>
+                <h2 style="color: var(--verde-principal); text-align: center;">Trajetória de Sucesso</h2>
+                <p>Nossa dedicação foi reconhecida logo na estreia, quando conquistamos o título de campeões do 50° Festival Folclórico de Tefé. Ao longo dos anos, apresentamos espetáculos marcantes com temas que exaltam nossas raízes, como "AUPABA: Terra Mãe" (2022) , "MAMIRAUÁ: Filho das Águas" (2023) e "Tefé meu torrão... seca, secagem, estiagem" (2024).</p>
+                <h2 style="color: var(--verde-principal); text-align: center;">Muito Além da Dança: Ações Sociais</h2>
+                <p>O nosso trabalho vai além das quadras e palcos. Desenvolvemos um importante papel social na comunidade através de:
+                            <ul><strong>Oficinas e Educação</strong>: Realizamos oficinas de dança para jovens e rodas de conversa sobre a memória cultural local.</ul>
+                            <ul><strong>Solidariedade</strong>: Organizamos campanhas de arrecadação de alimentos para apoiar os participantes e famílias em situação de vulnerabilidade.</ul>
+                            <ul><strong>Eventos Comunitários</strong>: Promovemos feijoadas, quermesses e o evento anual "Ciranbar" para fortalecer laços e arrecadar fundos para o grupo.</ul>
+                    Contamos com o apoio fundamental dos pais dos brincantes e do comércio local para manter viva essa chama cultural.
+                </p>
+            </section>
+
+        <section class="cta-ciranda">
+                <h3>Faça parte dessa roda!</h3>
+                <p>Acompanhe nossa trajetória, assista aos nossos espetáculos e fique por dentro das ações sociais e ensaios.</p>
+                
+                <div class="cta-grid">
+                    <a href="https://instagram.com/cirandaviladega" target="_blank" class="btn-social btn-insta">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        Siga no Instagram
+                    </a>
+                    
+                    <a href="https://youtube.com/@ciranda_vila_de_ega" target="_blank" class="btn-social btn-youtube-cta">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        Inscreva-se no YouTube
+                    </a>
+                    
+                    <a href="https://whatsapp.com/channel/0029VaLx4X19xVJmJVgBBA3W" target="_blank" class="btn-social btn-whatsapp-cta">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        Canal do WhatsApp
+                    </a>
+                </div>
+            </section>
 
         <section id="streaming" class="streaming-section" style="text-align: center; margin-top: 40px;">
+
             <h3 class="titulo-streaming" style="color: var(--verde-principal);">Ouça a Ciranda Vila de Ega</h3>
             <p>Dê o play e entre no ritmo:</p>
-            
             <div class="spotify-container">
-                <iframe 
-                    style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/artist/5kfO2Pu17HExmSsf1FkMLp?utm_source=generator" 
-                    width="100%" 
-                    height="152" 
-                    frameBorder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                <iframe
+                    style="border-radius:12px"
+                    src="https://open.spotify.com/embed/artist/5kfO2Pu17HExmSsf1FkMLp?utm_source=generator"
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy">
                 </iframe>
             </div>
 
-            <div class="plataformas-grid">
-                <a href="https://www.youtube.com/@Ciranda_Vila_De_Ega" scr="https://www.youtube.com/@Ciranda_Vila_De_Ega" target="_blank" class="btn-stream youtube">Ver no YouTube</a>
-                <a href="https://music.apple.com/br/artist/g-r-f-ciranda-vila-de-ega/1754616571" scr="https://music.apple.com/br/artist/g-r-f-ciranda-vila-de-ega/1754616571" target="_blank" class="btn-stream deezer">Ouvir no Apple Music</a>
-            </div>
-        </section>
-        </div>
+                <div class="plataformas-grid">
+                    <a href="https://www.youtube.com/@Ciranda_Vila_De_Ega" target="_blank" class="btn-stream youtube">
+                        <img src="images/icones/youtube.png" alt="Icone YouTube">
+                        Ver no YouTube
+                    </a>
 
-        <div id="aba-fotos" class="aba-conteudo" style="display:none;">
+                    <a href="https://music.apple.com/br/artist/g-r-f-ciranda-vila-de-ega/1754616571" target="_blank" class="btn-stream apple">
+                        <img src="images/icones/apple-music.png" alt="Icone Apple">
+                        Ouvir no Apple Music
+                    </a>
+                </div>
+            </section>
+
+        </div> <div id="aba-fotos" class="aba-conteudo" style="display:none;">
             <h2 class="titulo-secao">Galeria Vila de Ega</h2>
-            <p style="text-align: center;">Nossos momentos e apresentações</p>
-            
-            <div class="galeria-grid">
-                <div class="foto-card"><img src="https://via.placeholder.com/400x300/10733B/FFFFFF?text=Apresentacao+2024" alt="Apresentação"></div>
-                <div class="foto-card"><img src="https://via.placeholder.com/400x300/BF068E/FFFFFF?text=Ensaio+Geral" alt="Ensaio"></div>
-                <div class="foto-card"><img src="https://via.placeholder.com/400x300/10733B/FFFFFF?text=Festival+Folclorico" alt="Festival"></div>
-                <div class="foto-card"><img src="https://via.placeholder.com/400x300/BF068E/FFFFFF?text=Vila+de+Ega" alt="Grupo"></div>
+            <p style="text-align: center;">Nossos momentos e apresentações!</p>
+
+            <div class="albums-container">
+                <a href="https://www.flickr.com/photos/cirandaviladeega/albums/72177720331196757/" target="_blank" class="card-flickr-final">
+                    <img src="https://live.staticflickr.com/65535/55015194229_f3690f7575_z.jpg" alt="Galeria Ciranda Vila de Ega">
+                    <div class="card-info">
+                        <span class="flickr-bolinhas">••</span>
+                        <div class="textos">
+                            <strong>CIRANBAR 2024</strong>
+                            <small>Ciranda Vila de Ega</small>
+                        </div>
+                        <span class="seta">➜</span>
+                    </div>
+                </a>            
+
+                <a href="https://www.flickr.com/photos/cirandaviladeega/albums/72177720331188790/" target="_blank" class="card-flickr-final">
+                    <img src="https://live.staticflickr.com/65535/55015457940_9a07b42f4d_z.jpg" alt="Galeria 1">
+                    <div class="card-info">
+                        <span class="flickr-bolinhas">••</span>
+                        <div class="textos">
+                            <strong>CIRANBAR 2023</strong>
+                            <small>Ciranda Vila de Ega</small>
+                        </div>
+                        <span class="seta">➜</span>
+                    </div>
+                </a>
             </div>
         </div>
 
         <div id="aba-inscricao" class="aba-conteudo" style="display:none;">
             <div class="form-card">
                 <h2 class="titulo-secao">Ficha de Inscrição</h2>
-                <p style="text-align: center; margin-bottom: 20px;">Preencha os dados abaixo para se tornar um brincante.</p>
-
+                <p style="text-align: center; margin-bottom: 20px;">Preencha os dados abaixo para se tornar um brincante. </p>
+                <p style="text-align: left; color: rgba(255, 12, 4, 0.685);">*: <small>Campos obrigatórios</small></p>
                 <form id="form-inscricao">
-                    <label>Nome do brincante:</label>
+                    <label>Nome do brincante*:</label>
                     <input type="text" id="nome" placeholder="Nome completo" required>
-
                     <label>Responsável (se menor):</label>
                     <input type="text" id="responsavel" placeholder="Nome do responsável">
-
                     <div class="linha-form">
                         <div>
-                            <label>Data de Nasc.:</label>
+                            <label>Data de Nasc*.:</label>
                             <input type="date" id="nascimento">
                         </div>
                         <div>
-                            <label>Idade:</label>
+                            <label>Idade*:</label>
                             <input type="number" id="idade" style="width: 80px;">
                         </div>
                         <div>
-                            <label>Altura:</label>
+                            <label>Altura*:</label>
                             <input type="text" id="altura" placeholder="Ex: 1.70">
                         </div>
                     </div>
-
                     <div class="linha-form">
                         <div>
-                            <label>Peso:</label>
+                            <label>Peso*:</label>
                             <input type="text" id="peso">
                         </div>
                         <div>
-                            <label>Nº Calçado:</label>
+                            <label>Nº Calçado*:</label>
                             <input type="number" id="calcado">
                         </div>
                         <div>
-                            <label>Tam. Blusa:</label>
+                            <label>Tam. Blusa*:</label>
                             <input type="text" id="blusa" placeholder="P, M, G...">
                         </div>
                     </div>
-
-                    <label>Endereço:</label>
+                    <label>Endereço*:</label>
                     <input type="text" id="endereco" placeholder="Rua, número, complemento">
-
                     <div class="linha-form">
                         <div style="flex: 2;">
-                            <label>Bairro:</label>
+                            <label>Bairro*:</label>
                             <input type="text" id="bairro">
                         </div>
                         <div style="flex: 1;">
-                            <label>Telefone/Zap:</label>
-                            <input type="tel" id="telefone" placeholder="(92) 9..." required>
+                            <label>Telefone/WhatsApp*:</label>
+                            <input type="tel" id="telefone" placeholder="(97) 9..." required>
                         </div>
                     </div>
-
-                    <label>Email:</label>
+                    <label>Email*:</label>
                     <input type="email" id="email" placeholder="email@exemplo.com">
-
-                    <label>Já participou de oficina de dança?</label>
+                    <label>Já participou de oficina de dança?*</label>
                     <select id="oficina">
                         <option value="Não">Não</option>
                         <option value="Sim">Sim</option>
                     </select>
-
                     <label>Se sim, qual?</label>
                     <input type="text" id="qual_oficina">
-
                     <div class="termo-box">
                         <h3>INSCRIÇÃO E TERMO</h3>
                         <p>Eu, responsável ou próprio brincante identificado acima, concordo com as disposições gerais e solicito a inscrição na Ciranda Vila de Ega.</p>
@@ -151,9 +200,8 @@
                             Tefé/AM - <span id="data-hoje"></span>
                         </p>
                     </div>
-
                     <button type="button" onclick="enviarInscricaoWhatsApp()" class="btn-whatsapp-grande">
-                        Confirmar e Enviar Inscrição 
+                        Confirmar e Enviar Inscrição
                     </button>
                 </form>
             </div>
@@ -170,36 +218,29 @@
             </div>
         </div>
 
-    <div id="aba-contato" class="aba-conteudo" style="display:none;">
+  <div id="aba-contato" class="aba-conteudo" style="display:none;">
         <h2 class="titulo-secao">Fale Conosco</h2>
         <div style="text-align: center;">
             <p><strong>Email:</strong> cviladeega@gmail.com</p>
             <p><strong>Telefone:</strong> (92) 98469-3418</p>
             <p><strong>Endereço da Sede:</strong> Rua Japurá, 112, Bairro São Francisco, Tefé - AM</p>
-            
             <br>
-            
             <h3 style="color: var(--verde-principal); margin-bottom: 15px;">Nossa Localização</h3>
-            
             <div class="mapa-responsivo">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d296.9103056898261!2d-64.71476314604796!3d-3.348563723852606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1767064950621!5m2!1spt-BR!2sbr" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d296.9103056898261!2d-64.71476314604796!3d-3.348563723852606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1767064950621!5m2!1spt-BR!2sbr"
+                    allowfullscreen=""
+                    loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
             <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Sede: Vila de Ega - Tefé/AM</p>
         </div>
     </div>
-
     </main>
-
-    <footer style="background: var(--verde-principal); color: white; padding: 20px; text-align: center; margin-top: 50px;">
-        <p>&copy; 2025 Ciranda Vila de Ega - Todos os direitos reservados.</p>
+    <footer style="background: var(--verde-principal); color: white; padding: 20px; text-align: center;">
+        <p>© 2025 Ciranda Vila de Ega - Todos os direitos reservados. Site desenvolvido por Victória Carvalho.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
-
