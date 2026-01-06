@@ -475,3 +475,67 @@ input, select {
 .btn-whatsapp-cta {
     background-color: #25D366;
 }
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 20px; 
+        width: 100%;   
+        box-shadow: none; 
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .logo-area img.logo-img {
+        width: 180px; 
+    }
+    
+    .logo-area h1 {
+        font-size: 1.5rem; 
+    }
+
+    nav {
+        padding: 10px 5px; 
+    }
+    
+    nav a {
+        margin: 5px 8px; 
+        font-size: 0.8rem; 
+    }
+
+    .hero-interativo {
+        height: auto; 
+        min-height: 300px;
+        padding: 40px 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem; 
+    }
+
+    .linha-form {
+        flex-direction: column; 
+        gap: 0;
+    }
+
+    .linha-form > div {
+        margin-bottom: 10px; 
+    }
+
+    .form-card {
+        padding: 15px; 
+    }
+
+    .btn-social {
+        width: 100%; 
+        justify-content: center;
+    }
+
+    .cta-ciranda h3 {
+        font-size: 1.4rem;
+    }
+    
+    iframe {
+        max-width: 100%;
+    }
+}
