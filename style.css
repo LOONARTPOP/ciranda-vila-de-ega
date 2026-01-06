@@ -538,4 +538,16 @@ input, select {
     iframe {
         max-width: 100%;
     }
+
+    header {
+        background-image: 
+            linear-gradient(
+                135deg, 
+                rgba(16, 115, 59, 0.70) 0%,  
+                rgba(191,10,143, 0.70) 100%  
+            ),
+            url('images/banner-celular.jpg');
+        background-position: center;
+        padding: 3rem 0; 
+    }
 }
