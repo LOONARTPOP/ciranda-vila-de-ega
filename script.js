@@ -118,7 +118,7 @@ function enviarInscricaoWhatsApp() {
         console.error('Erro:', error);
         alert("Erro técnico de conexão. O WhatsApp será aberto manualmente.");
         
-        const numeroWhatsApp = "5592984693418"; 
+        const numeroWhatsApp = "55929xxxx3418"; 
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Erro no site, mas segue minha inscrição: " + nome)}`;
         window.open(url, '_blank');
     })
@@ -153,3 +153,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
