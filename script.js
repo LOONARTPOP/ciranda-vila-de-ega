@@ -33,40 +33,99 @@ function enviarInscricaoWhatsApp() {
     const qualOficina = document.getElementById('qual_oficina').value;
 
     if (!nome || !nascimento || !idade || !altura || !peso || !calcado || !blusa || !endereco || !bairro || !telefone || !email) {
-        alert("⚠️ Atenção: Todos os campos são obrigatórios (exceto o Responsável). Por favor, preencha tudo.");
+        alert("⚠️ Atenção: Todos os campos são obrigatórios (exceto o Responsável).");
         return; 
     }
-
     if (oficina === "Sim" && !qualOficina) {
-        alert("⚠️ Você informou que já fez oficina. Por favor, preencha qual foi.");
+        alert("⚠️ Preencha qual oficina você participou.");
         return;
     }
 
-    let texto = `*NOVA INSCRIÇÃO - CIRANDA VILA DE EGA*\n\n`;
-    texto += `*Nome:* ${nome}\n`;
-    
-    if(responsavel) {
-        texto += `*Responsável:* ${responsavel}\n`;
-    }
+    const botao = document.querySelector('.btn-whatsapp-grande');
+    const textoOriginal = botao.innerText;
+    botao.innerText = "Salvando...";
+    botao.disabled = true;
 
-    texto += `*Idade:* ${idade} anos (Nasc: ${nascimento})\n`;
-    texto += `*Medidas:* Altura ${altura} | Peso ${peso} | Pé ${calcado} | Blusa ${blusa}\n`;
-    texto += `*Contato:* ${telefone}\n`;
-    texto += `*Email:* ${email}\n`;
-    texto += `*Endereço:* ${endereco}, ${bairro}\n`;
+    const dadosParaPlanilha = {
+        Nome: nome,
+        Responsavel: responsavel,
+        Nascimento: nascimento,
+        Idade: idade,
+        Altura: altura,
+        Peso: peso,
+        Calcado: calcado,
+        Blusa: blusa,
+        Endereco: endereco,
+        Bairro: bairro,
+        Telefone: telefone,
+        Email: email,
+        Oficina: oficina,
+        QualOficina: qualOficina,
+        DataInscricao: new Date().toLocaleDateString('pt-BR')
+    };
 
-    if (oficina === "Sim") {
-        texto += `*Já fez oficina?* Sim (${qualOficina})\n\n`;
-    } else {
-        texto += `*Já fez oficina?* Não\n\n`;
-    }
+    fetch('salvar_inscricao.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dadosParaPlanilha),
+    })
+    .then(response => response.text())
+    .then(textoResposta => {
+        console.log("Resposta do Servidor:", textoResposta);
 
-    texto += `_Declaro que aceito os termos de inscrição._`;
+        if (textoResposta.includes("erro") || textoResposta.includes("<!DOCTYPE html>")) {
+            alert("⚠️ Erro ao salvar na planilha: " + textoResposta + "\n\nO WhatsApp será aberto mesmo assim.");
+        }
 
-    const numeroWhatsApp = "5592984693418"; 
-    
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
+        const dataHoje = new Date().toLocaleDateString('pt-BR');
+
+        let textoZap = `*📝 NOVA INSCRIÇÃO: CIRANDA VILA DE EGA*\n`;
+        textoZap += `*━━━━━━━━━━━━━━━━━━━━━━━━*\n\n`;
+        
+        textoZap += `*👤 DADOS DO BRINCANTE*\n`;
+        textoZap += `• *Nome:* ${nome}\n`;
+        if(responsavel) textoZap += `• *Responsável:* ${responsavel}\n`;
+        textoZap += `• *Nascimento:* ${nascimento}\n`;
+        textoZap += `• *Idade:* ${idade} anos\n\n`;
+
+        textoZap += `*📏 MEDIDAS E CONTATO*\n`;
+        textoZap += `• *Peso/Alt:* ${peso} kg / ${altura}m\n`;
+        textoZap += `• *Calçado:* nº ${calcado}\n`;
+        textoZap += `• *Blusa:* Tam. ${blusa}\n`;
+        textoZap += `• *Bairro:* ${bairro}\n`;
+        textoZap += `• *WhatsApp:* ${telefone}\n\n`;
+
+        textoZap += `*🎨 HISTÓRICO*\n`;
+        textoZap += `• *Oficina:* ${oficina} ${qualOficina ? '('+qualOficina+')' : ''}\n\n`;
+        
+        textoZap += `*📄 TERMO DE ACEITE*\n`;
+        textoZap += `_"Eu, identificado acima, solicito inscrição na Ciranda Vila de Ega e declaro estar ciente e de acordo com as normas e ensaios do grupo."_\n\n`;
+        
+        textoZap += `✅ *ACEITO EM:* ${dataHoje}\n`;
+        textoZap += `*━━━━━━━━━━━━━━━━━━━━━━━━*`;
+
+        const numeroWhatsApp = "5592984693418"; 
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoZap)}`;
+        
+        window.open(url, '_blank');
+
+        alert("Inscrição salva! Agora envie a mensagem no WhatsApp para finalizar.");
+        document.getElementById('form-inscricao').reset();
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
+        alert("Erro técnico de conexão. O WhatsApp será aberto manualmente.");
+        
+        const numeroWhatsApp = "5592984693418"; 
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Erro no site, mas segue minha inscrição: " + nome)}`;
+        window.open(url, '_blank');
+    })
+    .finally(() => {
+        botao.innerText = textoOriginal;
+        botao.disabled = false;
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
